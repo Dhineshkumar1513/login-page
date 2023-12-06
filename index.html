@@ -74,8 +74,8 @@
   <script>
     function login() {
       var h1 = document.getElementById("div");
-      var Num1 = document.getElementById("num1");
-      var Num2 = document.getElementById("num2");
+      var Num1 = document.getElementById("num1").value;
+      var Num2 = document.getElementById("num2").value;
       var data = [
         { u_name: "dhinesh", password: 12345 },
         { u_name: "kumar", password: 12354 },
@@ -84,7 +84,7 @@
       ];
       var check = false;
       for (let i of data) {
-        if (Num1.value == i.u_name && Num2.value == i.password) {
+        if (Num1 == i.u_name && Num2 == i.password) {
           check = true;
           break;
         }
@@ -94,6 +94,7 @@
         h1.textContent = "Login success";
         h1.style.color = "blue";
         h1.style.fontSize = "45px";
+        alert("You Try To Login")
       } else {
         console.log("Login Failed");
         
